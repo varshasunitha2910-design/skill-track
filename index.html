@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+public class PersonalExpenseTracker {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String name;
+        double income, budget;
+        double food, travel, shopping, bills, entertainment;
+        double totalExpense, balance;
+
+        System.out.println("----- Personal Expense Tracking and Monthly Budget Management System -----");
+
+        System.out.print("Enter User Name: ");
+        name = sc.nextLine();
+
+        System.out.print("Enter Monthly Income: ");
+        income = sc.nextDouble();
+
+        System.out.print("Enter Monthly Budget: ");
+        budget = sc.nextDouble();
+
+        System.out.print("Enter Food Expense: ");
+        food = sc.nextDouble();
+
+        System.out.print("Enter Travel Expense: ");
+        travel = sc.nextDouble();
+
+        System.out.print("Enter Shopping Expense: ");
+        shopping = sc.nextDouble();
+
+        System.out.print("Enter Bills Expense: ");
+        bills = sc.nextDouble();
+
+        System.out.print("Enter Entertainment Expense: ");
+        entertainment = sc.nextDouble();
+
+        totalExpense = food + travel + shopping + bills + entertainment;
+        balance = income - totalExpense;
+
+        System.out.println("\n------ MONTHLY EXPENSE REPORT ------");
+
+        System.out.println("User Name: " + name);
+        System.out.println("Monthly Income: " + income);
+        System.out.println("Monthly Budget: " + budget);
+
+        System.out.println("\nExpense Details:");
+
+        System.out.println("Food: " + food);
+        System.out.println("Travel: " + travel);
+        System.out.println("Shopping: " + shopping);
+        System.out.println("Bills: " + bills);
+        System.out.println("Entertainment: " + entertainment);
+
+        System.out.println("\nTotal Expenses: " + totalExpense);
+        System.out.println("Remaining Balance: " + balance);
+
+        if (totalExpense <= budget) {
+            System.out.println("Budget Status: Within Budget");
+        } else {
+            System.out.println("Budget Status: Budget Exceeded");
+        }
+
+        System.out.println("\nThank You!");
+
+        sc.close();
+    }
+}
